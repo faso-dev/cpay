@@ -5,7 +5,7 @@ namespace CC\Sdk;
 use CC\Sdk\Config\Credentials;
 use JetBrains\PhpStorm\Pure;
 
-class CPay
+class Payment
 {
     public static function initWithCredentials(Credentials $credentials): Transaction
     {
