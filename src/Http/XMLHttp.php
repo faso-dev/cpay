@@ -3,7 +3,6 @@
 namespace CPay\Http;
 
 use CPay\Response\XMLResponse;
-use CPay\Sdk\TransactionResponse;
 use function curl_close;
 use function curl_errno;
 use function curl_error;
@@ -38,7 +37,7 @@ class XMLHttp
         return [
             $errno,
             $error,
-            TransactionResponse::fromXMLResponse(XMLResponse::parse("<response>$response</response>"))
+            XMLResponse::parse("<response>$response</response>")
         ];
     }
 

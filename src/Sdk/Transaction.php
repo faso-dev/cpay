@@ -40,12 +40,15 @@ class Transaction implements TransactionCallableInterface, TransactionHandlerInt
         /**
          * @var $errno int
          * @var $error string
-         * @var $response TransactionResponse
+         * @var $response mixed
          */
         [$errno, $errorMessage, $response] = $this->processRequest();
         if ($errno > 0) {
             return $error($errorMessage, $errno);
         }
+
+        $response = TransactionResponse::fromXMLResponse($response);
+
         if ($response->getStatus() !== 200) {
             return $error($response->getMessage(), $response->getStatus());
         }
@@ -61,12 +64,15 @@ class Transaction implements TransactionCallableInterface, TransactionHandlerInt
         /**
          * @var $errno int
          * @var $errorMessage string
-         * @var $response TransactionResponse
+         * @var $response mixed
          */
         [$errno, $errorMessage, $response] = $this->processRequest();
         if ($errno > 0) {
             throw new TransactionException($errorMessage, $errno);
         }
+
+        $response = TransactionResponse::fromXMLResponse($response);
+
         if ($response->getStatus() !== 200) {
             throw new TransactionException($response->getMessage(), $response->getStatus());
         }
