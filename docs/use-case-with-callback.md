@@ -33,3 +33,6 @@ CPay::initWithCredentials(Credentials::from('username', 'password', 'merchant_nu
     );
 
 ```
+## Go back
+
+- [Home](index.md) 
