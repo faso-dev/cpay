@@ -2,6 +2,10 @@
 
 CPAY is a sdk that encapsulates the Orange Money api with an intuitive syntax allowing you to integrate the Orange Money payment into your PHP project.
 
+## Documentation
+
+See documentation [a relative link](docs/index.md)
+
 ## Installation
 
 ```shell
@@ -22,7 +26,7 @@ use CC\Sdk\CPay;
 require_once __DIR__ . '/vendor/autoload.php'; //Update to the path of your composer auto-load or remove this line
 
 CPay::initWithCredentials(Credentials::from('username', 'password', 'merchant'))
-    ->transactionData(TransactionData::from("clientNumber", "amount", "otp"))
+    ->transactionData(TransactionData::from("clientNumber", "payment_amount", "otp"))
     ->withCustomReference("145278945343965") //optionnal
     ->useProdApi() //for production
     ->withoutSSLVerification() //Disables SSL verification.
