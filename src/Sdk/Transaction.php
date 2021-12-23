@@ -2,11 +2,11 @@
 
 namespace CC\Sdk;
 
-
 use CC\Http\RequestBody;
 use CC\Http\XMLHttp;
 use CC\Sdk\Config\Credentials;
 use CC\Sdk\Config\TransactionData;
+use CC\Sdk\Exception\TransactionException;
 
 class Transaction implements PayementInterface
 {
@@ -26,15 +26,41 @@ class Transaction implements PayementInterface
 
     public function submit(callable $onSuccess, callable $onError): mixed
     {
+        /**
+         * @var $errno int
+         * @var $error string
+         * @var $response TransactionResponse
+         */
         [$errno, $error, $response] = $this->processRequest();
         if ($errno > 0) {
             return $onError($error, $errno);
         }
-        if ((int)$response->status !== 200) {
-            return $onError((string)$response->message, (int)$response->status);
+        if ($response->getStatus() !== 200) {
+            return $onError($response->getMessage(), $response->getStatus());
         }
 
         return $onSuccess($response);
+    }
+
+    /**
+     * @throws TransactionException
+     */
+    public function handleTransaction(): TransactionResponse
+    {
+        /**
+         * @var $errno int
+         * @var $error string
+         * @var $response TransactionResponse
+         */
+        [$errno, $error, $response] = $this->processRequest();
+        if ($errno > 0) {
+            throw new TransactionException($error, $errno);
+        }
+        if ($response->getStatus() !== 200) {
+            throw new TransactionException($response->getMessage(), $response->getStatus());
+        }
+
+        return $response;
     }
 
     public function withoutSSLVerification(): self
@@ -43,6 +69,9 @@ class Transaction implements PayementInterface
         return $this;
     }
 
+    /**
+     * @return array
+     */
     private function processRequest(): array
     {
         return XMLHttp::request($this->apiUrl, [
