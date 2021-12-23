@@ -12,7 +12,6 @@ use CC\Sdk\Config\Credentials;
 use CC\Sdk\Config\TransactionData;
 use CC\Sdk\Payment;
 use CC\Sdk\Exception\TransactionException;
-use CC\Sdk\TransactionResponse;
 
 try {
     $response = Payment::initWithCredentials(Credentials::from("username", "password", "merchant_number"))
