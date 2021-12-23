@@ -1,6 +1,6 @@
 <?php
 
-namespace CC\Exception;
+namespace CC\Sdk\Exception;
 
 use Exception;
 
