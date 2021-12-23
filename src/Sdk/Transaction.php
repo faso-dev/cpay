@@ -19,11 +19,14 @@ class Transaction implements TransactionCallableInterface, TransactionHandlerInt
 
     protected bool $withSSLVerification = XMLHttp::WITH_SSL_ENABLED;
 
+    protected Credentials $credentials;
+
     /**
      * @param Credentials $credentials
      */
-    public function __construct(protected Credentials $credentials)
+    public function __construct(Credentials $credentials)
     {
+        $this->credentials = $credentials;
         $this->useDevApi();
     }
 
@@ -32,7 +35,7 @@ class Transaction implements TransactionCallableInterface, TransactionHandlerInt
      * @param callable $error
      * @return mixed
      */
-    public function on(callable $success, callable $error): mixed
+    public function on(callable $success, callable $error)
     {
         /**
          * @var $errno int

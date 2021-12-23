@@ -4,8 +4,17 @@ namespace CPay\Sdk\Config;
 
 class Credentials
 {
-    private function __construct(private string $username, private string $password, private string $merchant)
+    private string $username;
+
+    private string $password;
+
+    private string $merchant;
+
+    private function __construct(string $username, string $password, string $merchant)
     {
+        $this->merchant = $merchant;
+        $this->password = $password;
+        $this->username = $username;
 
     }
 
@@ -66,6 +75,6 @@ class Credentials
 
     public static function from(string $username, string $password, string $merchant): self
     {
-        return new self(username: $username, password: $password, merchant: $merchant);
+        return new self($username, $password, $merchant);
     }
 }

@@ -22,7 +22,7 @@ class XMLHttp
     public const WITH_SSL_ENABLED = true;
     public const WITH_SSL_DISABLED = false;
 
-    public static function request(string $url, array $headers, mixed $body, bool $withSSLEnabled = self::WITH_SSL_ENABLED): array
+    public static function request(string $url, array $headers, $body, bool $withSSLEnabled = self::WITH_SSL_ENABLED): array
     {
         $curlHandler = curl_init();
         curl_setopt($curlHandler, CURLOPT_URL, $url);

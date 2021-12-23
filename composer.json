@@ -3,7 +3,7 @@
     "description": "Unofficial SDK to facilitate the use of Orange Money Burkina for online payment",
     "type": "library",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-simplexml": "*"

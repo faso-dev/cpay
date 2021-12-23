@@ -4,11 +4,18 @@ namespace CPay\Sdk;
 
 class TransactionResponse implements TransactionResponseInterface
 {
-    private function __construct(protected int $status, protected string $message, protected ?string $transactionId = null)
+    protected int $status;
+    protected string $message;
+    protected ?string $transactionId = null;
+
+    private function __construct(int $status, string $message, ?string $transactionId = null)
     {
+        $this->transactionId = $transactionId;
+        $this->message = $message;
+        $this->status = $status;
     }
 
-    public static function fromXMLResponse(mixed $xmlResponse): self
+    public static function fromXMLResponse($xmlResponse): self
     {
         return new self((int)$xmlResponse->status, (string)$xmlResponse->message, (string)$xmlResponse->transID);
     }

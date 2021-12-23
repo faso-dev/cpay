@@ -9,5 +9,5 @@ interface TransactionCallableInterface
      * @param callable $error
      * @return mixed
      */
-    public function on(callable $success, callable $error): mixed;
+    public function on(callable $success, callable $error);
 }

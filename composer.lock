@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0311e336d5edea65acada0630702fbcb",
+    "content-hash": "c9b7f267e308f31e285de784ad68e7b3",
     "packages": [],
     "packages-dev": [
         {
@@ -857,12 +857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d01222296466de73d8802f912526a44c23a033ca"
+                "reference": "b58d6ed48b946913dd6765696e3ecff97251a501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d01222296466de73d8802f912526a44c23a033ca",
-                "reference": "d01222296466de73d8802f912526a44c23a033ca",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b58d6ed48b946913dd6765696e3ecff97251a501",
+                "reference": "b58d6ed48b946913dd6765696e3ecff97251a501",
                 "shasum": ""
             },
             "require": {
@@ -952,7 +952,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-22T13:15:34+00:00"
+            "time": "2021-12-23T15:36:08+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2120,7 +2120,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0",
+        "php": "^7.4",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-simplexml": "*"

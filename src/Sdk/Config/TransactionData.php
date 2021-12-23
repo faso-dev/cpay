@@ -8,9 +8,18 @@ class TransactionData
 {
     protected string $referenceNumber;
 
+    protected string $clientNumber;
 
-    private function __construct(protected string $clientNumber, protected string $paymentAmount, protected string $otp)
+    protected string $paymentAmount;
+
+    protected string $otp;
+
+
+    private function __construct(string $clientNumber, string $paymentAmount, string $otp)
     {
+        $this->otp = $otp;
+        $this->paymentAmount = $paymentAmount;
+        $this->clientNumber = $clientNumber;
     }
 
     public static function from(string $clientNumber, string $paymentAmount, string $otp): self
