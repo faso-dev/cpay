@@ -15,9 +15,6 @@ $transactionData = TransactionData::from("client_number", "payment_amount", "otp
 
 ```
 
-## Authors
+## Go back
 
-- https://github.com/faso-dev 
-- https://github.com/yenteck 
-
-Merci de contribuer !
+- [Home](index.md)
