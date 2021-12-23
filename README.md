@@ -5,7 +5,7 @@ CHOCO PAY is a sdk that encapsulates the Orange Money api with an intuitive synt
 ## Installation
 
 ```shell
-composer require choco-code/cpay
+composer require choco-code/cpay 2.0.0
 ```
 
 ## Documentation
