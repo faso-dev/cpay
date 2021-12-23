@@ -10,7 +10,8 @@ composer require choco-code/cpay
 
 ## Cas d'utilisation
 
-```<?php
+```php
+<?php
 CPay::initWithCredentials(Credentials::from('username', 'password', 'merchant'))
     ->transactionData(TransactionData::from("clientNumber", "amount", "otp"))
     ->withCustomReference("145278945343965") //optionnal
