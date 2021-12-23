@@ -2,7 +2,7 @@
 
 namespace CC\Sdk;
 
-class TransactionResponse
+class TransactionResponse implements TransactionResponseInterface
 {
     private function __construct(protected int $status, protected string $message, protected ?string $transactionId = null)
     {
@@ -14,7 +14,7 @@ class TransactionResponse
     }
 
     /**
-     * @return int
+     * @inheritdoc
      */
     public function getStatus(): int
     {
@@ -22,7 +22,7 @@ class TransactionResponse
     }
 
     /**
-     * @return string
+     * @inheritdoc
      */
     public function getTransactionId(): string
     {
@@ -31,7 +31,7 @@ class TransactionResponse
 
 
     /**
-     * @return string
+     * @inheritdoc
      */
     public function getMessage(): string
     {

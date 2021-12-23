@@ -8,7 +8,7 @@ use CC\Sdk\Config\Credentials;
 use CC\Sdk\Config\TransactionData;
 use CC\Sdk\Exception\TransactionException;
 
-class Transaction implements PayementInterface
+class Transaction implements TransactionCallableInterface, TransactionHandlerInterface
 {
     private const DEV_API_URL = "https://testom.orange.bf:9008/payment";
     private const PROD_API_URL = "https://apiom.orange.bf:9007/payment";
@@ -19,27 +19,35 @@ class Transaction implements PayementInterface
 
     protected bool $withSSLVerification = XMLHttp::WITH_SSL_ENABLED;
 
+    /**
+     * @param Credentials $credentials
+     */
     public function __construct(protected Credentials $credentials)
     {
         $this->useDevApi();
     }
 
-    public function submit(callable $onSuccess, callable $onError): mixed
+    /**
+     * @param callable $success
+     * @param callable $error
+     * @return mixed
+     */
+    public function on(callable $success, callable $error): mixed
     {
         /**
          * @var $errno int
          * @var $error string
          * @var $response TransactionResponse
          */
-        [$errno, $error, $response] = $this->processRequest();
+        [$errno, $errorMessage, $response] = $this->processRequest();
         if ($errno > 0) {
-            return $onError($error, $errno);
+            return $error($errorMessage, $errno);
         }
         if ($response->getStatus() !== 200) {
-            return $onError($response->getMessage(), $response->getStatus());
+            return $error($response->getMessage(), $response->getStatus());
         }
 
-        return $onSuccess($response);
+        return $success($response);
     }
 
     /**
@@ -49,12 +57,12 @@ class Transaction implements PayementInterface
     {
         /**
          * @var $errno int
-         * @var $error string
+         * @var $errorMessage string
          * @var $response TransactionResponse
          */
-        [$errno, $error, $response] = $this->processRequest();
+        [$errno, $errorMessage, $response] = $this->processRequest();
         if ($errno > 0) {
-            throw new TransactionException($error, $errno);
+            throw new TransactionException($errorMessage, $errno);
         }
         if ($response->getStatus() !== 200) {
             throw new TransactionException($response->getMessage(), $response->getStatus());
@@ -63,6 +71,9 @@ class Transaction implements PayementInterface
         return $response;
     }
 
+    /**
+     * @return $this
+     */
     public function withoutSSLVerification(): self
     {
         $this->withSSLVerification = XMLHttp::WITH_SSL_DISABLED;
@@ -81,18 +92,30 @@ class Transaction implements PayementInterface
         );
     }
 
-    public function transactionData(TransactionData $transactionData): self
+    /**
+     * @param TransactionData $transactionData
+     * @return $this
+     */
+    public function withTransactionData(TransactionData $transactionData): self
     {
         $this->transactionData = $transactionData;
         return $this;
     }
 
+    /**
+     * @param string $reference
+     * @return $this
+     */
     public function withCustomReference(string $reference): self
     {
         $this->transactionData->setReferenceNumber($reference);
         return $this;
     }
 
+    /**
+     * @param string $devApiUrl
+     * @return $this
+     */
     public function useDevApi(string $devApiUrl = self::DEV_API_URL): self
     {
 
@@ -100,6 +123,10 @@ class Transaction implements PayementInterface
         return $this;
     }
 
+    /**
+     * @param string $prodApiUrl
+     * @return $this
+     */
     public function useProdApi(string $prodApiUrl = self::PROD_API_URL): self
     {
         $this->apiUrl = $prodApiUrl;
