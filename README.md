@@ -9,9 +9,16 @@ composer require choco-code/cpay
 ```
 
 ## Cas d'utilisation
+Update to the path of your composer auto-load.
+If you are using this package in Laravel or Symfony or any other Framework or Project that already required the composer auto-load, you can remove this line
 
 ```php
 <?php
+use CC\Sdk\Config\Credentials;
+use CC\Sdk\Config\TransactionData;
+use CC\Sdk\CPay;
+
+require_once __DIR__ . '/vendor/autoload.php'; //Update to the path of your composer auto-load or remove this line
 CPay::initWithCredentials(Credentials::from('username', 'password', 'merchant'))
     ->transactionData(TransactionData::from("clientNumber", "amount", "otp"))
     ->withCustomReference("145278945343965") //optionnal
