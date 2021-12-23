@@ -9,7 +9,7 @@ The arguments of the class are respectively: ``client_number`` is the phone numb
 ```php
 <?php
 
-use CC\Sdk\Config\TransactionData;
+use CPay\Sdk\Config\TransactionData;
 
 $transactionData = TransactionData::from("client_number", "payment_amount", "otp_code");
 

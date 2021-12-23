@@ -1,9 +1,8 @@
 <?php
 
-namespace CC\Sdk\Config;
+namespace CPay\Sdk\Config;
 
-use CC\Utils\ReferenceGenerator;
-use JetBrains\PhpStorm\Pure;
+use CPay\Utils\ReferenceGenerator;
 
 class TransactionData
 {
@@ -14,7 +13,7 @@ class TransactionData
     {
     }
 
-    #[Pure] public static function from(string $clientNumber, string $paymentAmount, string $otp): self
+    public static function from(string $clientNumber, string $paymentAmount, string $otp): self
     {
         return new self($clientNumber, $paymentAmount, $otp);
     }

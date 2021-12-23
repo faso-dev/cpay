@@ -1,9 +1,9 @@
 <?php
 
-namespace CC\Http;
+namespace CPay\Http;
 
-use CC\Response\XMLResponse;
-use CC\Sdk\TransactionResponse;
+use CPay\Response\XMLResponse;
+use CPay\Sdk\TransactionResponse;
 use function curl_close;
 use function curl_errno;
 use function curl_error;

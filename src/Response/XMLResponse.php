@@ -1,6 +1,6 @@
 <?php
 
-namespace CC\Response;
+namespace CPay\Response;
 
 use function json_decode;
 use function json_encode;

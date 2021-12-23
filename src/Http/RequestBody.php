@@ -1,10 +1,10 @@
 <?php
 
-namespace CC\Http;
+namespace CPay\Http;
 
 
-use CC\Sdk\Config\Credentials;
-use CC\Sdk\Config\TransactionData;
+use CPay\Sdk\Config\Credentials;
+use CPay\Sdk\Config\TransactionData;
 
 class RequestBody
 {

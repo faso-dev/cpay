@@ -7,11 +7,11 @@ If you are using this package in Laravel or Symfony or any other Framework or Pr
 
 <?php
 
-use CC\Sdk\Config\Credentials;
-use CC\Sdk\Config\TransactionData;
-use CC\Sdk\Payment;
-use CC\Sdk\Exception\TransactionException;
-use CC\Sdk\TransactionResponse;
+use CPay\Sdk\Config\Credentials;
+use CPay\Sdk\Config\TransactionData;
+use CPay\Sdk\Payment;
+use CPay\Sdk\Exception\TransactionException;
+use CPay\Sdk\TransactionResponse;
 
 require_once __DIR__ . '/vendor/autoload.php';
 

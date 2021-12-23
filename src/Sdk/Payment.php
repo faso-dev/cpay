@@ -1,9 +1,8 @@
 <?php
 
-namespace CC\Sdk;
+namespace CPay\Sdk;
 
-use CC\Sdk\Config\Credentials;
-use JetBrains\PhpStorm\Pure;
+use CPay\Sdk\Config\Credentials;
 
 class Payment
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CC\Sdk;
+namespace CPay\Sdk;
 
 interface TransactionCallableInterface
 {

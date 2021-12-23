@@ -10,7 +10,7 @@ the acceptor/partner who receives the payment ```merchant_number```.
 ```php
 <?php
 
-use CC\Sdk\Config\Credentials;
+use CPay\Sdk\Config\Credentials;
 
 $credentials = Credentials::from('username', 'password', 'merchant_number');
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace CC\Utils;
+namespace CPay\Utils;
 
 use function strtoupper;
 

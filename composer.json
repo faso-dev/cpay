@@ -14,7 +14,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "CC\\": "src/"
+            "CPay\\": "src/"
         }
     },
     "authors": [

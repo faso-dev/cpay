@@ -1,8 +1,6 @@
 <?php
 
-namespace CC\Sdk\Config;
-
-use JetBrains\PhpStorm\Pure;
+namespace CPay\Sdk\Config;
 
 class Credentials
 {

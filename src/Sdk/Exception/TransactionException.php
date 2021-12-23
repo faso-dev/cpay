@@ -1,6 +1,6 @@
 <?php
 
-namespace CC\Sdk\Exception;
+namespace CPay\Sdk\Exception;
 
 use Exception;
 

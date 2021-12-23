@@ -1,12 +1,12 @@
 <?php
 
-namespace CC\Sdk;
+namespace CPay\Sdk;
 
-use CC\Http\RequestBody;
-use CC\Http\XMLHttp;
-use CC\Sdk\Config\Credentials;
-use CC\Sdk\Config\TransactionData;
-use CC\Sdk\Exception\TransactionException;
+use CPay\Http\RequestBody;
+use CPay\Http\XMLHttp;
+use CPay\Sdk\Config\Credentials;
+use CPay\Sdk\Config\TransactionData;
+use CPay\Sdk\Exception\TransactionException;
 
 class Transaction implements TransactionCallableInterface, TransactionHandlerInterface
 {

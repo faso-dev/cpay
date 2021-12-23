@@ -8,10 +8,10 @@ line : ```require_once __DIR__ . '/vendor/autoload.php';```  in the example belo
 
 <?php
 
-use CC\Sdk\Config\Credentials;
-use CC\Sdk\Config\TransactionData;
-use CC\Sdk\Payment;
-use CC\Sdk\Exception\TransactionException;
+use CPay\Sdk\Config\Credentials;
+use CPay\Sdk\Config\TransactionData;
+use CPay\Sdk\Payment;
+use CPay\Sdk\Exception\TransactionException;
 
 try {
     $response = Payment::initWithCredentials(Credentials::from("username", "password", "merchant_number"))
