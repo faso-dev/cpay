@@ -6,6 +6,10 @@ CHOCO PAY is a sdk that encapsulates the Orange Money api with an intuitive synt
 
 [See documentation](docs/index.md)
 
+## Requirement
+
+```>= php 8.0```
+
 ## Testing
 
 Run tests
