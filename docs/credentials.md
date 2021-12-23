@@ -1,6 +1,6 @@
 # Credentials 
 
-This class materializes the connection credentials to the Orange Money api.These identifiers are retrieved from the operator after a contract signature.
+This class contains the connection credentials to the Orange Money api.These identifiers are retrieved from the operator after a contract signature.
 
 ## Use case
 
