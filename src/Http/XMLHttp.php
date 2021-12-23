@@ -3,6 +3,7 @@
 namespace CC\Http;
 
 use CC\Response\XMLResponse;
+use CC\Sdk\TransactionResponse;
 use function curl_close;
 use function curl_errno;
 use function curl_error;
@@ -37,7 +38,7 @@ class XMLHttp
         return [
             $errno,
             $error,
-            XMLResponse::parse("<response>$response</response>")
+            TransactionResponse::fromXMLResponse(XMLResponse::parse("<response>$response</response>"))
         ];
     }
 
