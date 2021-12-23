@@ -1,0 +1,27 @@
+{
+    "name": "choco-code/cpay",
+    "description": "Unofficial SDK to facilitate the use of Orange Money Burkina for online payment",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CC\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jerome Onadja",
+            "email": "jeromeonadja28@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
