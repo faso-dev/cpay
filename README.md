@@ -28,11 +28,11 @@ use CC\Sdk\TransactionResponse;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-CPay::initWithCredentials(Credentials::from('DECLICSARL', 'DECLIC@47', '06363737'))
-    ->transactionData(TransactionData::from("06373838", "10000", "123456"))
-    ->withCustomReference("145278945343965")
-    ->useDevApi()
-    ->withoutSSLVerification()
+CPay::initWithCredentials(Credentials::from('username', 'password', 'merchant_number'))
+    ->transactionData(TransactionData::from("client_number", "payment_amount", "otp_code"))
+    ->withCustomReference("145278945343965") //optionnal
+    ->useProdApi() //for production
+    ->withoutSSLVerification() //Disable SSL verification(not recommended).
     ->submit(
         onSuccess: function (TransactionResponse $response) {
             echo 'Thank you for your purchasse !';
