@@ -11,7 +11,7 @@ composer require choco-code/cpay
 ## Use case
 
 Update to the path of your composer auto-load.
-If you are using this package in Laravel or Symfony or any other Framework or Project that already required the composer auto-load, you can remove this line : ```php require_once __DIR__ . '/vendor/autoload.php'; ```
+If you are using this package in Laravel or Symfony or any other Framework or Project that already required the composer auto-load, you can remove this line : ```require_once __DIR__ . '/vendor/autoload.php'; ``` in the example below
 
 ```php
 <?php
