@@ -12,24 +12,9 @@ the acceptor/partner who receives the payment ```merchant_number```.
 
 use CC\Sdk\Config\Credentials;
 
-$credentials = Credentials::from('username', 'password', 'merchant');
+$credentials = Credentials::from('username', 'password', 'merchant_number');
 
 ```
-
-## Testing
-
-Exécutez les tests avec:
-
-```bash
-vendor/bin/phpunit
-```
-
-ou
-
-```bash
-composer tests
-```
-
 
 ## Authors
 
