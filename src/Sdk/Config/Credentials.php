@@ -66,7 +66,7 @@ class Credentials
     }
 
 
-    #[Pure] public static function from(string $username, string $password, string $merchant): self
+    public static function from(string $username, string $password, string $merchant): self
     {
         return new self(username: $username, password: $password, merchant: $merchant);
     }
