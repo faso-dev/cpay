@@ -38,7 +38,7 @@ class XMLHttp
         return [
             $errno,
             $error,
-            TransactionResponse::fromXMLResponse(XMLResponse::parse("<response>$response</response>"))
+            XMLResponse::parse("<response>$response</response>")
         ];
     }
 
