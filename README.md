@@ -4,7 +4,7 @@ CPAY is a sdk that encapsulates the Orange Money api with an intuitive syntax al
 
 ## Documentation
 
-See documentation [a relative link](docs/index.md)
+[See documentationk](docs/index.md)
 
 ## Installation
 
