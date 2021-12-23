@@ -1,7 +1,8 @@
 ## Use case with callback to handle success or error response
 
-Update to the path of your composer auto-load.
-If you are using this package in Laravel or Symfony or any other Framework or Project that already required the composer auto-load, you can remove this line : ```require_once __DIR__ . '/vendor/autoload.php';```  in the example below
+Update to the path of your composer auto-load. If you are using this package in Laravel or Symfony or any other
+Framework or Project that already required the composer auto-load, you can remove this
+line : ```require_once __DIR__ . '/vendor/autoload.php';```  in the example below
 
 ```php
 
@@ -22,12 +23,12 @@ Payment::initWithCredentials(Credentials::from("username", "password", "merchant
     ->withoutSSLVerification() // if you have any troubleshoot with ssl verifcation(not recommended)
     ->on(
     
-        success: function (TransactionResponse $response) {
+        function (TransactionResponse $response) {
             echo 'Thank you for your purchasse !';
             echo $response->getTransactionId();
         },
-
-        error: function (string $message, int $errorCode) {
+        
+        function (string $message, int $errorCode) {
             echo "Whoops! Unable to process payment. <br/> 
                     Error message returned by request: {$message}. <br/>
                      Error code returned by request: {$errorCode}";
@@ -35,6 +36,7 @@ Payment::initWithCredentials(Credentials::from("username", "password", "merchant
     );
 
 ```
+
 ## Go back
 
 - [Home](index.md) 
