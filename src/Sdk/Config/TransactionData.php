@@ -10,13 +10,13 @@ class TransactionData
     protected string $referenceNumber;
 
 
-    private function __construct(protected string $clientNumber, protected string $amount, protected string $otp)
+    private function __construct(protected string $clientNumber, protected string $paymentAmount, protected string $otp)
     {
     }
 
-    #[Pure] public static function from(string $clientNumber, string $amount, string $otp): self
+    #[Pure] public static function from(string $clientNumber, string $paymentAmount, string $otp): self
     {
-        return new self($clientNumber, $amount, $otp);
+        return new self($clientNumber, $paymentAmount, $otp);
     }
 
     /**
@@ -40,18 +40,18 @@ class TransactionData
     /**
      * @return string
      */
-    public function getAmount(): string
+    public function getPaymentAmount(): string
     {
-        return $this->amount;
+        return $this->paymentAmount;
     }
 
     /**
-     * @param string $amount
+     * @param string $paymentAmount
      * @return TransactionData
      */
-    public function setAmount(string $amount): self
+    public function setAmount(string $paymentAmount): self
     {
-        $this->amount = $amount;
+        $this->paymentAmount = $paymentAmount;
         return $this;
     }
 

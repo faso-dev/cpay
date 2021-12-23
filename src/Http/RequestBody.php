@@ -17,7 +17,7 @@ class RequestBody
             <merchant_msisdn>{$credentials->getMerchant()}</merchant_msisdn>
             <api_username>{$credentials->getUsername()}</api_username>
             <api_password>{$credentials->getPassword()}</api_password>
-            <amount>{$transactionData->getAmount()}</amount>
+            <amount>{$transactionData->getPaymentAmount()}</amount>
             <PROVIDER>101</PROVIDER>
             <PROVIDER2>101</PROVIDER2>
             <PAYID>12</PAYID>
