@@ -7,7 +7,7 @@ use JetBrains\PhpStorm\Pure;
 
 class CPay
 {
-    #[Pure] public static function initWithCredentials(Credentials $credentials): Transaction
+    public static function initWithCredentials(Credentials $credentials): Transaction
     {
         return new Transaction($credentials);
     }

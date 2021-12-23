@@ -23,17 +23,17 @@ class XMLHttp
 
     public static function request(string $url, array $headers, mixed $body, bool $withSSLEnabled = self::WITH_SSL_ENABLED): array
     {
-        $request = curl_init();
-        curl_setopt($request, CURLOPT_URL, $url);
-        curl_setopt($request, CURLOPT_POST, true);
-        curl_setopt($request, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($request, CURLOPT_POSTFIELDS, $body);
-        curl_setopt($request, CURLOPT_SSL_VERIFYPEER, $withSSLEnabled);
-        $response = curl_exec($request);
-        $errno = curl_errno($request);
-        $error = curl_error($request);
-        curl_close($request);
+        $curlHandler = curl_init();
+        curl_setopt($curlHandler, CURLOPT_URL, $url);
+        curl_setopt($curlHandler, CURLOPT_POST, true);
+        curl_setopt($curlHandler, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curlHandler, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlHandler, CURLOPT_POSTFIELDS, $body);
+        curl_setopt($curlHandler, CURLOPT_SSL_VERIFYPEER, $withSSLEnabled);
+        $response = curl_exec($curlHandler);
+        $errno = curl_errno($curlHandler);
+        $error = curl_error($curlHandler);
+        curl_close($curlHandler);
         return [
             $errno,
             $error,
