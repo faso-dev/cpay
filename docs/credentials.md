@@ -16,9 +16,7 @@ $credentials = Credentials::from('username', 'password', 'merchant_number');
 
 ```
 
-## Authors
+## Go back
 
-- https://github.com/faso-dev 
-- https://github.com/yenteck 
+- [Home](index.md) 
 
-Merci de contribuer !
