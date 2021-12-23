@@ -1,14 +1,15 @@
 # CPAY 
 
-CPAY est un sdk qui encapsuble l'api de Orange Money avec une syntaxe intuitive vous permettant d'intégrer le paiement par Orange Money dans votre projet PHP.
+CPAY is a sdk that encapsulates the Orange Money api with an intuitive syntax allowing you to integrate the Orange Money payment into your PHP project.
 
-## Installation via composer
+## Installation
 
 ```shell
 composer require choco-code/cpay
 ```
 
-## Cas d'utilisation
+## Use case
+
 Update to the path of your composer auto-load.
 If you are using this package in Laravel or Symfony or any other Framework or Project that already required the composer auto-load, you can remove this line
 
